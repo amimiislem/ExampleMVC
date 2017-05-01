@@ -1,13 +1,78 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_login_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="com.example.pc_asus.examplemvc.login.LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/cont_create_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="center_horizontal">
+        <TextView
+            style="@style/Label.CredentialHeader"
+            android:id="@+id/lbl_login_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/header_welcome"
+            android:layout_marginTop="16dp"
+            android:gravity="center"/>
+        <TextView
+            style="@style/Label.Sub"
+            android:id="@+id/lbl_login_email_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prompt_email"
+            android:layout_below="@+id/lbl_login_header"
+            />
+        <EditText
+            style="@style/InputField.Credential.Email"
+            android:id="@+id/lbl_login_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_email"
+            android:layout_below="@+id/lbl_login_email_sub"/>
+        <TextView
+            style="@style/Label.Sub"
+            android:id="@+id/lbl_login_pass_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prompt_password"
+            android:layout_below="@+id/lbl_login_email"
+            />
+        <EditText
+            style="@style/InputField.Credential.Password"
+            android:id="@+id/lbl_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbl_login_pass_sub"
+            />
+        <Button
+            style="@style/Button.Flat.Primery"
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action_sign_in"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <Button
+            style="@style/Button.Flat.Primery"
+            android:id="@+id/btn_create_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/action_regester"
+            android:layout_below="@+id/btn_login"
+            android:layout_centerHorizontal="true"
+           />
+    </RelativeLayout>
+    <ProgressBar
+        android:id="@+id/pro_login_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible"/>
 
 </FrameLayout>
